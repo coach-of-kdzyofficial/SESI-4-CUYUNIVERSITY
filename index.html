@@ -1,27 +1,41 @@
+<!doctype html>
 <html>
-    <head>
-        <tittle>CETRAK CETREK LAMPU SESI 3</tittle>
-    </head>
-    <body>
-        <img src="assets/images/off.gif" alt="" id="lampu1" />
-        <h1>CETREKAN LAMPU ON OFF BRO</h1>
-        <button onclick="saklar('on')">NYALAKAN LAMPU</button>
-        <button onclick="saklar('off')">MATIKAN LAMPU</button>
 
-        <!-- ini adalah script js kita -->
-        <script>
-            function saklar(params) {
-                let lampu1 = document.getElementById("lampu1");
+<head>
+    <tittle>CETRAK CETREK LAMPU SESI 3</tittle>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" />
+</head>
 
-                if(params == "on"){
-                    lampu1.src = "assets/images/on.gif";
-                }
-                if(params == "off"){
-                    lampu1.src = "assets/images/off.gif";
-                }
+<body>
+    <div class=" flex justify-center items-center min-h-screen w-full bg-gray-800 gap-4">
+        <!-- lampu 1 -->
+        <div class="flex flex-col gap-2">
+            <img src="assets/images/off.gif" alt="" id="lampu1" />
+            <button  onclick="saklar('on', 1)" class="bg-white p-4 text-black">NYALAKAN LAMPU 1</button>
+            <button onclick="saklar('off', 1)" class="bg-white p-4 text-black">MATIKAN LAMPU 1</button>
+        </div>
 
-                return lampu1;
-            }
-        </script>
-    </body>
+        <!-- lampu 2 -->
+        <div class="flex flex-col gap-2">
+            <img src="assets/images/off.gif" alt="" id="lampu2" />
+            <button onclick="saklar('on', 2)" class="bg-white p-4 text-black">NYALAKAN LAMPU 2</button>
+            <button onclick="saklar('off', 2)" class="bg-white p-4 text-black">MATIKAN LAMPU 2</button>
+        </div>
+
+        <!-- lampu 3 -->
+        <div class="flex flex-col gap-2">
+            <img src="assets/images/off.gif" alt="" id="lampu3" />
+            <button onclick="saklar('on', 3)" class="bg-white p-4 text-black">NYALAKAN LAMPU 3</button>
+            <button onclick="saklar('off', 3)" class="bg-white p-4 text-black">MATIKAN LAMPU 3</button>
+        </div>
+    </div>
+
+
+    <!-- ini adalah script js kita -->
+    <script src="saklar.js" type="application/javascript"></script>
+</body>
+
 </html>
